@@ -1,0 +1,86 @@
+<%- include("partials/header") -%>
+
+    <!-- NavBar for website -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="/home">Travel Guide</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link mr-2" id="active" href="#">Reviews<hr id="actHr"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-2" href="/add_review">Add Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mr-2" href="route.html">Routes</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link mr-3" href="#contact">Contact</a>
+            </li>
+            <li>
+                <div class="dropleft">
+                    <a class="dropdown-toggle" href="#"  id="dropdownMenuLink" data-toggle="dropdown">
+                      <img class="user" src="/imgs/user.png" alt="">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="/user_profile">My Profile</a>
+                      <a class="dropdown-item" href="/edit_profile">Edit Profile</a>
+                      <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                  </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- the div element for header text and background picture -->
+    <div class="container">
+        <div class="review_header"> 
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <div>
+                        <h1>Reviews</h1>
+                        <div class="container mt-5">
+                            <form class="my-lg-0 search">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+  <section class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3">
+
+        <% reviewLst.forEach(function(review){ %>
+            <div class="col mb-5">
+                <a href="/reviews/<%= 123 %>">
+                    <div class="card cardStyle1">
+                        <img class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" src="<%= review.img %>" alt="">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title"><%= review.placeName %>, <%= review.country %></h5>
+                                <p><i style="color: yellow;" class="fa fa-star"></i> <%= review.rating %></p>
+                            </div>
+                            <h6 class="card-subtitle mb-2"><%= review.userName %> </h6>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }); %>
+
+    </div>
+  </section>
+
+
+
+<%- include('partials/footer') -%> 

@@ -1,0 +1,144 @@
+body {
+    background-color: #1a1a1a;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.125);
+}
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.header {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../imgs/top_mountain.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-top: 235px;
+}
+h2 {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+.btn-margin {
+    margin-top: 6px;
+    padding-top: 1px;
+    padding-bottom: 3px;
+}
+#mainNavbar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+#mainNavbar .nav-link:hover {
+    color: white;
+}
+.btn-hover-success:hover {
+    color: whitesmoke;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-hover-info:hover {
+    color: whitesmoke;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.content {
+    margin-top: 200px;
+}
+.parastyle {
+    color: #bbbbbb;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2.0;
+}
+.navbar.scrolled {
+    background-color: rgba(18, 18, 18, .9);
+    transition: background 500ms;
+}
+.round-corner-right {
+    border-top-right-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+.round-corner-left {
+    border-top-left-radius: 2%;
+    border-bottom-left-radius: 2%;
+}
+hr {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    border-top: 1px double #ea3e44;
+    color: #ea3e44;
+    overflow: visible;
+    text-align: center;
+    height: 1px;
+}
+
+#actHr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-top: 2px double #ea3e44;
+    color: #ea3e44;
+    width: 75%;
+}
+
+.review_header {
+    height: 300px;
+    width: 100%;
+    /* background-color: #313131; */
+    background-image: url("../imgs/top_mountain.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.review_header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: whitesmoke;
+    margin-top: 90px;
+}
+
+.search {
+    margin: auto 15%;
+}
+
+.card {
+    background-color: #1f1f1f;
+    color: white;
+}
+.row .card {
+    background-color: #242424;
+}
+.socialMedia {
+    width: 50px;
+    height: 50px;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+}
+
+a {
+    color: rgba(18, 18, 18, 1);
+}
+
+a:hover {
+    color: rgba(18, 18, 18, 1);
+}
+
+.h2 {
+    color: white;
+    font-weight: 200;
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/sign_in_style.css">
+  <title>Sign Up</title>
+
+  <style>
+    .mb-3, .my-3 {
+      margin-bottom: 0.5rem!important;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="container pt-5">
+      <div class="row block" style="background-color: #efefef; border-radius: 4px;">
+        <!-- Sign Up form -->
+        <div class="col-6 p-0">
+
+          <form action="/sign_up" method="POST" class="form-signin pb-0">
+            
+            <div class="text-center mb-4">
+              <h1 class="mb-3" style="font-weight: 700;">SignUp</h1>
+            </div>
+            <!-- Name Fields -->
+            <div class="d-flex">
+              <div class="input-group mb-3 mr-1">
+                <input type="text" name="fname" class="form-control" placeholder="First Name" autocomplete="off" required>
+              </div>
+              <div class="input-group mb-3 ml-1">
+                <input type="text" class="form-control" placeholder="Last Name" autocomplete="off" required>
+              </div>
+            </div>
+            <!-- EOF Name Field -->
+
+            <!-- Email Field -->
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Your Email" autocomplete="off" required>
+            </div>
+            <!-- EOF Email Field -->
+
+            <!-- Pno Field -->
+            <div class="input-group mb-3">
+              <input type="tel" class="form-control" placeholder="Your Phone Number" autocomplete="off">
+            </div>
+            <!-- EOF Pno Field -->
+            
+            <!-- Country and City Field -->
+            <div class="d-flex">
+              <div class="input-group mb-3 mr-1">
+                <input type="text" class="form-control" placeholder="Country" autocomplete="off">
+              </div>
+  
+              <div class="input-group mb-3 ml-1">
+                <input type="text" class="form-control" placeholder="City" autocomplete="off">
+              </div>
+            </div>
+            <!-- EOF Country and City Field -->
+
+            <!-- Date Field -->
+            <div class="input-group mb-3">
+              <input type="date" class="form-control" autocomplete="off">
+            </div>
+            <!-- EOF Date Field -->
+
+            <!-- Gender -->
+            <div class="ml-2">
+              <input type="radio" id="male" name="gander">
+              <label for="male">Male</label>
+              <input class="ml-3" type="radio" id="female" name="gander">
+              <label for="female">Female</label>
+              <input class="ml-3" type="radio" id="other" name="gander">
+              <label for="other">Other</label>
+            </div>
+            <!-- EOF Gender -->
+            
+            <!-- Password -->
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Password" autocomplete="off" required>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Confirm Password" autocomplete="off" required>
+            </div>
+
+            <!-- Submit Btn -->
+            <button class="btn btn-danger btn-block mt-4">Sign Up</button>
+          
+          </form>
+
+          <div class="text-center">
+            <p class="mt-2">Already have an account? <a href="/login">Login</a></p>
+          </div>
+
+        </div>
+
+        <!-- Image -->
+        <div class="col-6 p-0">
+
+          <div class="row headera2 m-0 align-items-center">
+            <div class="col-12 text-center">
+              <h1>Online Travel Guide</h1>
+              <p class="lead px-5" style="color: white;">
+                Take every chance you get in life, because some things only 
+                happen once.
+              </p>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,186 @@
+<%- include("partials/header") -%>
+
+
+    <!-- NavBar for website -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1" href="/home">Travel Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link mr-2" href="/reviews">Reviews</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link mr-2" id="active" href="#">Add Reviews<hr id="actHr"></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link mr-2" href="route.html">Routes</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link mr-3" href="#contact">Contact</a>
+              </li>
+              <li>
+                  <div class="dropleft">
+                      <a class="dropdown-toggle" href="#"  id="dropdownMenuLink" data-toggle="dropdown">
+                        <img class="user" src="/imgs/user.png" alt="">
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/user_profile">My Profile</a>
+                        <a class="dropdown-item" href="/edit_profile">Edit Profile</a>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                      </div>
+                    </div>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- the div element for header text and background picture -->
+    <div class="container">
+        <div class="review_header d-flex align-items-center justify-content-center"> 
+            <div class="text-center">
+                <h1>Add Review</h1>
+            </div>
+        </div>
+    </div>
+
+    <section class="mt-5 text-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h1>Share Your Experience!</h1>
+          <p>Please fill this form to share your experience</p>
+        </div>
+
+        <form action="/user_profile" method="POST">
+
+        <div class="row">
+          <div class="col-2"></div>
+
+
+          <div class="col-8">
+            <form action="" >
+              <div class="row row-cols-2 mb-4">
+                <div class="col">
+                  <label for="">City Name:</label>
+                  <div class="input-group ">
+                    <input class="form-control" type="text" name="obj[city]" id="" placeholder="eg: Karachi" required>
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="">Country Name:</label>
+                  <div class="input-group ">
+                    <input class="form-control" type="text" name="obj[country]" id="" placeholder="eg: Pakistan" required>
+                  </div>
+                </div>
+              </div>
+
+              <label for="">Visited Place Name:</label>
+              <div class="input-group mb-4">
+                <input class="form-control" type="text" name="obj[place]" id="" placeholder="eg: Sea View" required>
+              </div>
+
+
+              <label for="" id="hello">Drag the Marker to the location:</label>
+              <div id="map1" class="mb-4"></div>
+              <pre id="coordinates" class="coordinates mb-4"></pre>
+
+              <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiaHVuYWluc2FlZWQiLCJhIjoiY2tlMWFuMDd6MnhubTJ5dDY3ajg4bnY4ZiJ9.kTxruDpb_SilfSdyEnmglw';
+                var coordinates = document.getElementById('coordinates');
+                var map1 = new mapboxgl.Map({
+                    container: 'map1',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [67.67, 28.75], //Center the Pakistan on the map [69, 31],
+                    zoom: 4
+                });
+            
+                // Add zoom and rotation controls to the map.
+                map1.addControl(new mapboxgl.FullscreenControl(), 'top-right');
+                map1.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+
+                
+                var marker = new mapboxgl.Marker({
+                    draggable: true
+                }).setLngLat([67.67, 28.75]).addTo(map1);
+                var lngLat;
+                //Get the lng and lat of the location on which marker is placed
+                function onDragEnd() {
+                    lngLat = marker.getLngLat();
+                    coordinates.style.display = 'block';
+                    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+                }
+                marker.on('dragend', onDragEnd);
+                
+              </script>
+
+              <label for="">How much it cost?</label>
+              <div class="input-group mb-4">
+                <input class="form-control"  type="number" step="0.01" min="0" max="5" placeholder="0 means Too Expansive, 5 means Cheap" required>
+              </div>
+
+              <label for="">Rate the place on the basis of safety</label>
+              <div class="input-group mb-4">
+                <input class="form-control" type="number" step="0.01" min="0" max="5" placeholder="0 means Danger, 5 means Secure" required>
+              </div>
+
+              <label for="">Rate the place overall</label>
+              <div class="input-group mb-4">
+                <input class="form-control" name="obj[allrating]" step="0.01" type="number" min="0" max="5" placeholder="0 means Very Bad, 5 means Best" required>
+              </div>
+
+              <label for="">Review of the place</label>
+              <div class="input-group mb-4">
+                <textarea class="form-control" name="obj[body]" id="" cols="30" rows="10" required></textarea>
+              </div>
+
+              <label for="">Image Link</label>
+              <div class="input-group mb-4">
+                <input class="form-control" name="obj[image]" type="text" placeholder="Image URL">
+              </div>
+
+              <div class="card cardStyle1 text-center mb-4">
+                <div class="card-header">
+                  <h4>Upload Images</h4>
+                </div>
+                <div class="card-body">
+
+                  <div class="d-flex justify-content-around">
+                    <div class="d-flex flex-column justify-content-center">
+                      <div>
+                        <img class="uploaded-pic-ext" src="/imgs/laptop.png" alt="">
+                      </div>
+                      <a class="text-light m-0">This Pc</a>
+                    </div>
+
+                    <div class="d-flex flex-column justify-content-center">
+                      <div>
+                        <img class="uploaded-pic-ext" src="/imgs/cloud.png" alt="">
+                      </div>
+                      <a class="text-light m-0">Cloud</a>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+              
+              <button class="btn btn-success btn-block">Share</button>
+            </form>
+          </div>
+
+
+          <div class="col-2"></div>
+
+        </div>
+      </form>
+
+      </div>
+    </section>
+
+
+
+<%- include('partials/footer') -%> 
